@@ -20,7 +20,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="ResultLabel"
+        <Label x:Name="ScreenLabel"
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4">             
@@ -123,10 +123,10 @@
                        Text="0">
             </TextBlock>
         </Button>
-        <Button x:Name="EqualsButton"
+        <Button x:Name="ResultButton"
                 Grid.Row="4"
                 Grid.Column="2">
-            <TextBlock x:Name="EqualsTextBlock"
+            <TextBlock x:Name="ResultTextBlock"
                        Text="=">
             </TextBlock>
         </Button>
