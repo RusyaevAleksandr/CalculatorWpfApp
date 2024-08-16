@@ -20,136 +20,136 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="ResultLabel"
+        <Label x:Name="resultLabel"
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4">
         </Label>
-        <Button x:Name="DigitSevenButton"
+        <Button x:Name="digitSevenButton"
                 Grid.Row="1"
                 Grid.Column="0"
                 Click="DigitSevenButton_Click">
-            <TextBlock x:Name="DigitSevenTextBlock"
+            <TextBlock x:Name="digitSevenTextBlock"
                        Text="7">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitEightButton"
+        <Button x:Name="digitEightButton"
                 Grid.Row="1"
                 Grid.Column="1"
                 Click="DigitEightButton_Click">
-            <TextBlock x:Name="DigitEightTextBlock"
+            <TextBlock x:Name="digitEightTextBlock"
                        Text="8">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitNineButton"
+        <Button x:Name="digitNineButton"
                 Grid.Row="1"
                 Grid.Column="2"
                 Click="DigitNineButton_Click">
-            <TextBlock x:Name="DigitNineTextBlock"
+            <TextBlock x:Name="digitNineTextBlock"
                        Text="9">
             </TextBlock>
         </Button>
-        <Button x:Name="SumTextButton"
+        <Button x:Name="sumTextButton"
                 Grid.Row="1"
                 Grid.Column="3"
                 Click="SumTextButton_Click">
-            <TextBlock x:Name="SumTextBlock"
+            <TextBlock x:Name="sumTextBlock"
                        Text="+">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitFourButton"
+        <Button x:Name="digitFourButton"
                 Grid.Row="2"
                 Grid.Column="0"
                 Click="DigitFourButton_Click">
-            <TextBlock x:Name="DigitFourTextBlock"
+            <TextBlock x:Name="digitFourTextBlock"
                        Text="4">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitFiveButton"
+        <Button x:Name="digitFiveButton"
                 Grid.Row="2"
                 Grid.Column="1"
                 Click="DigitFiveButton_Click">
-            <TextBlock x:Name="DigitFiveTextBlock"
+            <TextBlock x:Name="digitFiveTextBlock"
                        Text="5">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitSixButton"
+        <Button x:Name="digitSixButton"
                 Grid.Row="2"
                 Grid.Column="2"
                 Click="DigitSixButton_Click">
-            <TextBlock x:Name="DigitSixTextBlock"
+            <TextBlock x:Name="digitSixTextBlock"
                        Text="6">
             </TextBlock>
         </Button>
-        <Button x:Name="SubtractButton"
+        <Button x:Name="subtractButton"
                 Grid.Row="2"
                 Grid.Column="3"
                 Click="SubtractButton_Click">
-            <TextBlock x:Name="SubtractTextBlock"
+            <TextBlock x:Name="subtractTextBlock"
                        Text="-">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitOneButton"
+        <Button x:Name="digitOneButton"
                 Grid.Row="3"
                 Grid.Column="0"
                 Click="DigitOneButton_Click">
-            <TextBlock x:Name="DigitOneTextBlock"
+            <TextBlock x:Name="digitOneTextBlock"
                        Text="1">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitTwoButton"
+        <Button x:Name="digitTwoButton"
                 Grid.Row="3"
                 Grid.Column="1"
                 Click="DigitTwoButton_Click">
-            <TextBlock x:Name="DigitTwoTextBlock"
+            <TextBlock x:Name="digitTwoTextBlock"
                        Text="2">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitThreeButton"
+        <Button x:Name="digitThreeButton"
                 Grid.Row="3"
                 Grid.Column="2"
                 Click="DigitThreeButton_Click">
-            <TextBlock x:Name="DigitThreeTextBlock"
+            <TextBlock x:Name="digitThreeTextBlock"
                        Text="3">
             </TextBlock>
         </Button>
-        <Button x:Name="MultiplyButton"
+        <Button x:Name="multiplyButton"
                 Grid.Row="3"
                 Grid.Column="3"
                 Click="MultiplyButton_Click">
-            <TextBlock x:Name="MultiplyTextBlock"
+            <TextBlock x:Name="multiplyTextBlock"
                        Text="x">
             </TextBlock>
         </Button>
-        <Button x:Name="ResetButton"
+        <Button x:Name="resetButton"
                 Grid.Row="4"
                 Grid.Column="0"
                 Click="ResetButton_Click">
-            <TextBlock x:Name="ResetTextBlock"
+            <TextBlock x:Name="resetTextBlock"
                        Text="C">
             </TextBlock>
         </Button>
-        <Button x:Name="DigitZeroButton"
+        <Button x:Name="digitZeroButton"
                 Grid.Row="4"
                 Grid.Column="1"
                 Click="DigitZeroButton_Click">
-            <TextBlock x:Name="DigitZeroTextBlock"
+            <TextBlock x:Name="digitZeroTextBlock"
                        Text="0">
             </TextBlock>
         </Button>
-        <Button x:Name="EqualsButton"
+        <Button x:Name="equalsButton"
                 Grid.Row="4"
                 Grid.Column="2"
                 Click="ResultButton_Click">
-            <TextBlock x:Name="EqualsTextBlock"
+            <TextBlock x:Name="equalsTextBlock"
                        Text="=">
             </TextBlock>
         </Button>
-        <Button x:Name="DivideButton"
+        <Button x:Name="divideButton"
                 Grid.Row="4"
                 Grid.Column="3"
                 Click="DivideButton_Click">
-            <TextBlock x:Name="DivideTextBlock"
+            <TextBlock x:Name="divideTextBlock"
                        Text="/">
             </TextBlock>
         </Button>
