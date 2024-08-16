@@ -25,10 +25,17 @@ namespace CalculatorWpfApp
             if (Sign == null)
             {
                 FirstDigit = digit;
+                resultLabel.Content = FirstDigit;
             }
             else
             {
+                resultLabel.Content = null;
                 SecondDigit = digit;
+                resultLabel.Content = SecondDigit;
+                if (Sign == "/" && SecondDigit == 0)
+                {
+                    resultLabel.Content = "На ноль делить нельзя!";
+                }
             }
         }
 
@@ -94,7 +101,7 @@ namespace CalculatorWpfApp
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
-            Sign = "C";
+            resultLabel.Content = null;
         }
 
         private void DigitZeroButton_Click(object sender, RoutedEventArgs e)
@@ -114,8 +121,9 @@ namespace CalculatorWpfApp
                     break;
                 case "/": ResultNumber = FirstDigit / SecondDigit;
                     break;
-                case "C": ResultNumber = 0; break;
             }
+
+            resultLabel.Content = ResultNumber;
         }
 
         private void DivideButton_Click(object sender, RoutedEventArgs e)
