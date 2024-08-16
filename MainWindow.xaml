@@ -140,7 +140,7 @@
         <Button x:Name="EqualsButton"
                 Grid.Row="4"
                 Grid.Column="2"
-                Click="EqualsButton_Click">
+                Click="ResultButton_Click">
             <TextBlock x:Name="EqualsTextBlock"
                        Text="=">
             </TextBlock>
