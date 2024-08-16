@@ -16,8 +16,6 @@ namespace CalculatorWpfApp
 
         private int SecondDigit;
 
-        public int ResultNumber;
-
         private string Sign;
 
         private void AddingNumber(int digit)
@@ -25,13 +23,10 @@ namespace CalculatorWpfApp
             if (Sign == null)
             {
                 FirstDigit = digit;
-                resultLabel.Content = FirstDigit;
             }
             else
             {
-                resultLabel.Content = null;
                 SecondDigit = digit;
-                resultLabel.Content = SecondDigit;
                 if (Sign == "/" && SecondDigit == 0)
                 {
                     resultLabel.Content = "На ноль делить нельзя!";
@@ -101,6 +96,7 @@ namespace CalculatorWpfApp
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
+            Sign = String.Empty;
             resultLabel.Content = null;
         }
 
@@ -113,17 +109,20 @@ namespace CalculatorWpfApp
         {
             switch (Sign)
             {
-                case "+": ResultNumber = FirstDigit + SecondDigit; 
+                case "+":
+                    resultLabel.Content = FirstDigit + SecondDigit;
+                    Sign = String.Empty;
                     break;
-                case "-": ResultNumber = FirstDigit - SecondDigit;
+                case "-":
+                    resultLabel.Content = FirstDigit - SecondDigit;
                     break;
-                case "*": ResultNumber = FirstDigit * SecondDigit;
+                case "*":
+                    resultLabel.Content = FirstDigit * SecondDigit;
                     break;
-                case "/": ResultNumber = FirstDigit / SecondDigit;
+                case "/":
+                    resultLabel.Content = FirstDigit / SecondDigit;
                     break;
             }
-
-            resultLabel.Content = ResultNumber;
         }
 
         private void DivideButton_Click(object sender, RoutedEventArgs e)

@@ -3,10 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CalculatorWpfApp"        
-        Title="Калькулятор" 
+        xmlns:local="clr-namespace:CalculatorWpfApp"
+        Title="Калькулятор"
         Height="500" Width="400">
-    <Grid>
+    <Window.Resources>
+        <Style x:Key="DigitButton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"/>
+            <Setter Property="Margin" Value="6"/>
+        </Style>
+        <Style x:Key="SignButton" TargetType="Button">
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Margin" Value="6"/>
+        </Style>
+        <Style x:Key="ResetButton" TargetType="Button">
+            <Setter Property="Background" Value="DarkRed"/>
+            <Setter Property="Margin" Value="6"/>
+        </Style>
+        <Style x:Key="TextDigitButton" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="TextSignButton" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+    <Grid>        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -26,130 +50,162 @@
                 Grid.ColumnSpan="4">
         </Label>
         <Button x:Name="digitSevenButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="1"
                 Grid.Column="0"
                 Click="DigitSevenButton_Click">
             <TextBlock x:Name="digitSevenTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="7">
             </TextBlock>
         </Button>
         <Button x:Name="digitEightButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="1"
                 Grid.Column="1"
                 Click="DigitEightButton_Click">
             <TextBlock x:Name="digitEightTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="8">
             </TextBlock>
         </Button>
         <Button x:Name="digitNineButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="1"
                 Grid.Column="2"
                 Click="DigitNineButton_Click">
             <TextBlock x:Name="digitNineTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="9">
             </TextBlock>
         </Button>
         <Button x:Name="sumTextButton"
+                Style="{StaticResource SignButton}"
                 Grid.Row="1"
                 Grid.Column="3"
                 Click="SumTextButton_Click">
             <TextBlock x:Name="sumTextBlock"
+                       Style="{StaticResource TextSignButton}"
                        Text="+">
             </TextBlock>
         </Button>
         <Button x:Name="digitFourButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="2"
                 Grid.Column="0"
                 Click="DigitFourButton_Click">
             <TextBlock x:Name="digitFourTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="4">
             </TextBlock>
         </Button>
         <Button x:Name="digitFiveButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="2"
                 Grid.Column="1"
                 Click="DigitFiveButton_Click">
             <TextBlock x:Name="digitFiveTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="5">
             </TextBlock>
         </Button>
         <Button x:Name="digitSixButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="2"
                 Grid.Column="2"
                 Click="DigitSixButton_Click">
             <TextBlock x:Name="digitSixTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="6">
             </TextBlock>
         </Button>
         <Button x:Name="subtractButton"
+                Style="{StaticResource SignButton}"
                 Grid.Row="2"
                 Grid.Column="3"
                 Click="SubtractButton_Click">
             <TextBlock x:Name="subtractTextBlock"
+                       Style="{StaticResource TextSignButton}"
                        Text="-">
             </TextBlock>
         </Button>
         <Button x:Name="digitOneButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="3"
                 Grid.Column="0"
                 Click="DigitOneButton_Click">
             <TextBlock x:Name="digitOneTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="1">
             </TextBlock>
         </Button>
         <Button x:Name="digitTwoButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="3"
                 Grid.Column="1"
                 Click="DigitTwoButton_Click">
             <TextBlock x:Name="digitTwoTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="2">
             </TextBlock>
         </Button>
         <Button x:Name="digitThreeButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="3"
                 Grid.Column="2"
                 Click="DigitThreeButton_Click">
             <TextBlock x:Name="digitThreeTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="3">
             </TextBlock>
         </Button>
         <Button x:Name="multiplyButton"
+                Style="{StaticResource SignButton}"
                 Grid.Row="3"
                 Grid.Column="3"
                 Click="MultiplyButton_Click">
             <TextBlock x:Name="multiplyTextBlock"
+                       Style="{StaticResource TextSignButton}"
                        Text="x">
             </TextBlock>
         </Button>
         <Button x:Name="resetButton"
+                Style="{StaticResource ResetButton}"
                 Grid.Row="4"
                 Grid.Column="0"
                 Click="ResetButton_Click">
             <TextBlock x:Name="resetTextBlock"
+                       Style="{StaticResource TextSignButton}"
                        Text="C">
             </TextBlock>
         </Button>
         <Button x:Name="digitZeroButton"
+                Style="{StaticResource DigitButton}"
                 Grid.Row="4"
                 Grid.Column="1"
                 Click="DigitZeroButton_Click">
             <TextBlock x:Name="digitZeroTextBlock"
+                       Style="{StaticResource TextDigitButton}"
                        Text="0">
             </TextBlock>
         </Button>
         <Button x:Name="equalsButton"
+                Style="{StaticResource SignButton}"
                 Grid.Row="4"
                 Grid.Column="2"
                 Click="ResultButton_Click">
             <TextBlock x:Name="equalsTextBlock"
+                       Style="{StaticResource TextSignButton}"
                        Text="=">
             </TextBlock>
         </Button>
         <Button x:Name="divideButton"
+                Style="{StaticResource SignButton}"
                 Grid.Row="4"
                 Grid.Column="3"
                 Click="DivideButton_Click">
             <TextBlock x:Name="divideTextBlock"
+                       Style="{StaticResource TextSignButton}"
                        Text="/">
             </TextBlock>
         </Button>
