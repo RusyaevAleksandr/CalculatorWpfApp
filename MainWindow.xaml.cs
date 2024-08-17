@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace CalculatorWpfApp
 {
@@ -47,77 +48,6 @@ namespace CalculatorWpfApp
             ResultNumber = 0;
         }
 
-        private void DigitSevenButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(7);
-        }
-
-        private void DigitEightButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(8);
-        }
-
-        private void DigitNineButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(9);
-        }
-
-        private void SumTextButton_Click(object sender, RoutedEventArgs e)
-        {
-            Sign = "+";
-        }
-
-        private void DigitFourButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(4);
-        }
-
-        private void DigitFiveButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(5);
-        }
-
-        private void DigitSixButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(6);
-        }
-
-        private void SubtractButton_Click(object sender, RoutedEventArgs e)
-        {
-            Sign = "-";
-        }
-
-        private void DigitOneButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(1);
-        }
-
-        private void DigitTwoButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(2);
-        }
-
-        private void DigitThreeButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(3);
-        }
-
-        private void MultiplyButton_Click(object sender, RoutedEventArgs e)
-        {
-            Sign = "*";
-        }
-
-        private void ResetButton_Click(object sender, RoutedEventArgs e)
-        {
-            CleaningData();
-            resultLabel.Content = null;
-        }
-
-        private void DigitZeroButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddingNumber(0);
-        }
-
         private void ResultButton_Click(object sender, RoutedEventArgs e)
         {
             switch (Sign)
@@ -145,9 +75,13 @@ namespace CalculatorWpfApp
             }
         }
 
-        private void DivideButton_Click(object sender, RoutedEventArgs e)
+        private void Digit_Button_Click(object sender, RoutedEventArgs e)
         {
-            Sign = "/";
+            var DigitButton = (Button)(sender);
+
+            var digit = DigitButton.Content as string;
+
+            resultLabel.Content += digit;
         }
     }
 }
