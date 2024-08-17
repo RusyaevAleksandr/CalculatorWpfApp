@@ -17,62 +17,44 @@ namespace CalculatorWpfApp
 
         private int SecondDigit;
 
-        private int ResultNumber;
+        private string ResultNumber;
 
-        private string Sign;
-
-        private void AddingNumber(int digit)
+        private void Result_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Sign == String.Empty && FirstDigit == 0)
+            string[] operations = new string[] {"+", "-", "x", "/"};
+
+            string textLabel = resultLabel.Content.ToString();
+
+            var elements = textLabel.Split(operations, StringSplitOptions.RemoveEmptyEntries);
+
+            FirstDigit = Convert.ToInt32(elements[0]);
+            SecondDigit = Convert.ToInt32(elements[1]);
+
+            if (textLabel.Contains("+"))
             {
-                FirstDigit = digit;
-                resultLabel.Content = FirstDigit;
-            }            
-            else
+                ResultNumber = (FirstDigit + SecondDigit).ToString();
+            }
+            else if (textLabel.Contains("-"))
             {
-                resultLabel.Content = null;
-                SecondDigit = digit;
-                resultLabel.Content = SecondDigit;
-                if (Sign == "/" && SecondDigit == 0)
+                ResultNumber = (FirstDigit - SecondDigit).ToString();
+            }
+            else if (textLabel.Contains("x"))
+            {
+                ResultNumber = (FirstDigit * SecondDigit).ToString();
+            }
+            else if (textLabel.Contains("/"))
+            {
+                if (SecondDigit != 0)
                 {
-                    resultLabel.Content = "Ошибка!";
+                    ResultNumber = (FirstDigit / SecondDigit).ToString();
+                }
+                else
+                {
+                    ResultNumber = "Ошибка!";
                 }
             }
-        }
 
-        private void CleaningData()
-        {
-            Sign = String.Empty;
-            FirstDigit = 0; 
-            SecondDigit = 0;
-            ResultNumber = 0;
-        }
-
-        private void ResultButton_Click(object sender, RoutedEventArgs e)
-        {
-            switch (Sign)
-            {
-                case "+":
-                    ResultNumber = FirstDigit + SecondDigit;
-                    resultLabel.Content = ResultNumber;
-                    Sign = String.Empty;
-                    break;
-                case "-":
-                    ResultNumber = FirstDigit - SecondDigit;
-                    resultLabel.Content = ResultNumber;
-                    Sign = String.Empty;
-                    break;
-                case "*":
-                    ResultNumber = FirstDigit * SecondDigit;
-                    resultLabel.Content = ResultNumber;
-                    Sign = String.Empty;
-                    break;
-                case "/":
-                    ResultNumber = FirstDigit / SecondDigit;
-                    resultLabel.Content = ResultNumber;
-                    Sign = String.Empty;
-                    break;
-            }
+            resultLabel.Content = ResultNumber;
         }
 
         private void Digit_Button_Click(object sender, RoutedEventArgs e)
@@ -82,6 +64,20 @@ namespace CalculatorWpfApp
             var digit = DigitButton.Content as string;
 
             resultLabel.Content += digit;
+        }
+
+        private void Operation_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var operationButton = (Button)(sender);
+
+            var operation = operationButton.Content as string;
+
+            resultLabel.Content += operation;
+        }
+
+        private void Reset_Button_Click(object sender, RoutedEventArgs e)
+        {
+            resultLabel.Content = String.Empty;
         }
     }
 }
