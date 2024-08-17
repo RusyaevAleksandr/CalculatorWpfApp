@@ -16,15 +16,16 @@
         <Style x:Key="SignButton" TargetType="Button">
             <Setter Property="Background" Value="DimGray"/>
             <Setter Property="Margin" Value="6"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style x:Key="ResetButton" TargetType="Button">
             <Setter Property="Background" Value="DarkRed"/>
             <Setter Property="Margin" Value="6"/>
-        </Style>
-        <Style x:Key="TextSignButton" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="40"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style x:Key="RectangleStyle" TargetType="Rectangle">
             <Setter Property="Stroke" Value="Black"/>
@@ -32,7 +33,7 @@
             <Setter Property="StrokeThickness" Value="1"/>
             <Setter Property="Margin" Value="8, 5, 8, 5"/>
         </Style>
-        <Style x:Key="TextLabelSryle" TargetType="Label">
+        <Style x:Key="TextLabelStyle" TargetType="Label">
             <Setter Property="TextBlock.FontSize" Value="40"/>
             <Setter Property="TextBlock.FontWeight" Value="Bold"/>
             <Setter Property="TextBlock.Margin" Value="9,1,9,1"/>
@@ -63,7 +64,7 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"
-                Style="{StaticResource TextLabelSryle}">
+                Style="{StaticResource TextLabelStyle}">
         </Label>
         <Button Content="7"
                 Style="{StaticResource DigitButton}"
@@ -98,7 +99,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="sumTextButton"
+        <Button Content="+"
                 Style="{StaticResource SignButton}"
                 Grid.Row="1"
                 Grid.Column="3">
@@ -107,10 +108,6 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
-            <TextBlock x:Name="sumTextBlock"
-                       Style="{StaticResource TextSignButton}"
-                       Text="+">
-            </TextBlock>
         </Button>
         <Button Content="4"
                 Style="{StaticResource DigitButton}"
@@ -145,7 +142,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="subtractButton"
+        <Button Content="-"
                 Style="{StaticResource SignButton}"
                 Grid.Row="2"
                 Grid.Column="3">
@@ -154,10 +151,6 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
-            <TextBlock x:Name="subtractTextBlock"
-                       Style="{StaticResource TextSignButton}"
-                       Text="-">
-            </TextBlock>
         </Button>
         <Button Content="1"
                 Style="{StaticResource DigitButton}"
@@ -192,7 +185,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="multiplyButton"
+        <Button Content="х"
                 Style="{StaticResource SignButton}"
                 Grid.Row="3"
                 Grid.Column="3">
@@ -201,12 +194,8 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
-            <TextBlock x:Name="multiplyTextBlock"
-                       Style="{StaticResource TextSignButton}"
-                       Text="x">
-            </TextBlock>
         </Button>
-        <Button x:Name="resetButton"
+        <Button Content="C"
                 Style="{StaticResource ResetButton}"
                 Grid.Row="4"
                 Grid.Column="0">
@@ -215,10 +204,6 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
-            <TextBlock x:Name="resetTextBlock"
-                       Style="{StaticResource TextSignButton}"
-                       Text="C">
-            </TextBlock>
         </Button>
         <Button Content="0"
                 Style="{StaticResource DigitButton}"
@@ -231,7 +216,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="equalsButton"
+        <Button Content="="
                 Style="{StaticResource SignButton}"
                 Grid.Row="4"
                 Grid.Column="2">
@@ -240,12 +225,8 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
-            <TextBlock x:Name="equalsTextBlock"
-                       Style="{StaticResource TextSignButton}"
-                       Text="=">
-            </TextBlock>
         </Button>
-        <Button x:Name="divideButton"
+        <Button Content="/"
                 Style="{StaticResource SignButton}"
                 Grid.Row="4"
                 Grid.Column="3">
@@ -254,10 +235,6 @@
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
-            <TextBlock x:Name="divideTextBlock"
-                       Style="{StaticResource TextSignButton}"
-                       Text="/">
-            </TextBlock>
         </Button>
     </Grid>
 </Window>
