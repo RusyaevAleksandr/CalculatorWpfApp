@@ -23,10 +23,13 @@ namespace CalculatorWpfApp
             if (Sign == null)
             {
                 FirstDigit = digit;
+                resultLabel.Content = FirstDigit;
             }
             else
             {
+                resultLabel.Content = null;
                 SecondDigit = digit;
+                resultLabel.Content = SecondDigit;
                 if (Sign == "/" && SecondDigit == 0)
                 {
                     resultLabel.Content = "На ноль делить нельзя!";
