@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculatorWpfApp"
         Title="Калькулятор"
-        Height="500" Width="400">
+        Height="500" Width="400"
+        MinHeight="500" MinWidth="400">
     <Window.Resources>
         <Style x:Key="DigitButton" TargetType="Button">
             <Setter Property="Background" Value="WhiteSmoke"/>
