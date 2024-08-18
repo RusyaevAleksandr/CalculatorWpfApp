@@ -13,48 +13,55 @@ namespace CalculatorWpfApp
             InitializeComponent();
         }
 
-        private int FirstDigit;
+        private string firstNumber = String.Empty;
 
-        private int SecondDigit;
+        private string secondNumber = String.Empty;
 
-        private string ResultNumber;
+        private string resultNumber = String.Empty;
+
+        private string operationSign = String.Empty;
 
         private void Result_Button_Click(object sender, RoutedEventArgs e)
         {
-            string[] operations = new string[] {"+", "-", "x", "/"};
-
-            string textLabel = resultLabel.Content.ToString();
-
-            var elements = textLabel.Split(operations, StringSplitOptions.RemoveEmptyEntries);
-
-            FirstDigit = Convert.ToInt32(elements[0]);
-            SecondDigit = Convert.ToInt32(elements[1]);
-
-            if (textLabel.Contains("+"))
+            if (String.IsNullOrEmpty(operationSign) || String.IsNullOrEmpty(secondNumber))
             {
-                ResultNumber = (FirstDigit + SecondDigit).ToString();
-            }
-            else if (textLabel.Contains("-"))
-            {
-                ResultNumber = (FirstDigit - SecondDigit).ToString();
-            }
-            else if (textLabel.Contains("x"))
-            {
-                ResultNumber = (FirstDigit * SecondDigit).ToString();
-            }
-            else if (textLabel.Contains("/"))
-            {
-                if (SecondDigit != 0)
-                {
-                    ResultNumber = (FirstDigit / SecondDigit).ToString();
-                }
-                else
-                {
-                    ResultNumber = "Ошибка!";
-                }
+                MessageBox.Show("Вы не указали числа и операцию над ними!");
+                return;
             }
 
-            resultLabel.Content = ResultNumber;
+            var firstOperand = Convert.ToInt32(firstNumber);                  
+            var secondOperand = Convert.ToInt32(secondNumber);
+
+            resultNumber = String.Empty;
+
+            switch (operationSign)
+            {
+                case "+": resultNumber = (firstOperand + secondOperand).ToString();
+                    break;
+                case "-": resultNumber = (firstOperand - secondOperand).ToString();
+                    break;
+                case "x": resultNumber = (firstOperand * secondOperand).ToString(); 
+                    break;
+                case "/":
+                    if (secondOperand != 0) 
+                    {
+                        resultNumber = (firstOperand / secondOperand).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("На ноль делить нельзя!");
+                        return;
+                    }
+                     
+                    break;
+            }
+
+            firstNumber = resultNumber;
+
+            operationSign = String.Empty;
+            secondNumber = String.Empty;
+
+            UpdateResultLabel();
         }
 
         private void Digit_Button_Click(object sender, RoutedEventArgs e)
@@ -63,21 +70,61 @@ namespace CalculatorWpfApp
 
             var digit = DigitButton.Content as string;
 
-            resultLabel.Content += digit;
+            if (String.IsNullOrEmpty(operationSign))
+            {
+                firstNumber += Convert.ToInt32(digit);
+            }
+            else
+            {
+                secondNumber += Convert.ToInt32(digit);
+            }
+
+            UpdateResultLabel();
+        }
+
+        private void UpdateResultLabel()
+        {
+            resultLabel.Content = firstNumber + operationSign + secondNumber;
         }
 
         private void Operation_Button_Click(object sender, RoutedEventArgs e)
         {
             var operationButton = (Button)(sender);
 
-            var operation = operationButton.Content as string;
+            var sign = operationButton.Content as string;
 
-            resultLabel.Content += operation;
+            if (String.IsNullOrEmpty(firstNumber))
+            {
+                if (sign == "-")
+                {
+                    firstNumber += sign;
+                }
+                else
+                {
+                    MessageBox.Show("Нельзя выполнить такую операцию!");
+                    return;
+                }
+            }
+            else
+            {
+                if (firstNumber == "-")
+                {
+                    MessageBox.Show("Укажите число!");
+                    return;
+                }
+                operationSign = sign;
+            }
+
+            UpdateResultLabel();
         }
 
         private void Reset_Button_Click(object sender, RoutedEventArgs e)
         {
-            resultLabel.Content = String.Empty;
+            firstNumber = String.Empty;
+            secondNumber = String.Empty;
+            operationSign = String.Empty;
+
+            UpdateResultLabel();
         }
     }
 }
